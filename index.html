@@ -14,28 +14,27 @@
 
     body {
       margin: 0;
-      background-color: #eae3d2;
+      background: #d9cfb8; /* более тёплый фон */
       font-family: 'EB Garamond', serif;
-      color: #3a352b;
+      color: #2f2a24;
     }
 
     .container {
       max-width: 720px;
       margin: 100px auto;
-      padding: 70px 60px;
-      background: #fdfaf3;
+      padding: 80px 65px;
+      background: #fbf6e8; /* цвет бумаги */
       position: relative;
-      border-radius: 6px;
+      border-radius: 4px;
 
-      box-shadow: 
-        0 10px 40px rgba(0,0,0,0.15),
-        inset 0 0 80px rgba(180, 150, 90, 0.12);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.25),
+        inset 0 0 120px rgba(160, 120, 60, 0.15);
 
-      /* ВАЖНО: фикс слоёв */
       overflow: hidden;
     }
 
-    /* пожелтевшие края */
+    /* сильнее выраженные края */
     .container::before {
       content: "";
       position: absolute;
@@ -43,14 +42,11 @@
       pointer-events: none;
       z-index: 0;
 
-      background: radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,0) 60%,
-        rgba(210,180,120,0.25) 100%
-      );
+      background:
+        radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(180,140,80,0.25) 100%);
     }
 
-    /* текстура бумаги */
+    /* текстура бумаги (сильнее видна) */
     .container::after {
       content: "";
       position: absolute;
@@ -58,11 +54,10 @@
       pointer-events: none;
       z-index: 0;
 
-      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-      opacity: 0.2;
+      background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+      opacity: 0.35;
     }
 
-    /* ВАЖНО: чтобы текст был поверх эффектов */
     .container > * {
       position: relative;
       z-index: 1;
@@ -77,11 +72,7 @@
     .nav a {
       margin-right: 20px;
       text-decoration: none;
-      color: #6b6458;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
+      color: #6a5f4b;
     }
 
     h1 {
@@ -97,31 +88,32 @@
 
     p {
       font-size: 18px;
-      line-height: 1.85;
-      margin-bottom: 24px;
+      line-height: 1.9;
+      margin-bottom: 26px;
     }
 
     .quote {
       font-style: italic;
-      margin: 40px 0;
+      margin: 50px 0;
       padding-left: 20px;
-      border-left: 2px solid #c8b89a;
-      color: #5a5346;
+      border-left: 2px solid #b8a98a;
+      color: #5c5243;
     }
 
     img {
       width: 100%;
-      margin: 30px 0;
-      border-radius: 3px;
-      filter: sepia(20%) contrast(95%);
+      margin: 35px 0;
+      border-radius: 2px;
+      filter: sepia(30%) contrast(95%) brightness(95%);
     }
 
     .caption {
       font-size: 13px;
-      color: #7a7366;
+      color: #7a6f5c;
       margin-top: -20px;
       margin-bottom: 30px;
     }
+
   </style>
 </head>
 
