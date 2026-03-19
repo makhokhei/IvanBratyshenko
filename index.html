@@ -5,70 +5,50 @@
   <title>Жизнь Ивана Ефимовича Братышенко</title>
 
   <style>
-    body {
-      margin: 0;
-      background-color: #f5f1e8;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #2f2f2f;
-      line-height: 1.7;
-    }
+   body {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  background-color: #eae3d2;
+}
 
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
+/* сама "страница" */
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 60px 50px;
+  background: #fdfaf3;
+  position: relative;
+  
+  /* мягкая тень */
+  box-shadow: 
+    0 0 40px rgba(0,0,0,0.15),
+    inset 0 0 80px rgba(180, 150, 90, 0.15);
+}
 
-    h1 {
-      font-size: 36px;
-      font-weight: normal;
-      margin-bottom: 40px;
-    }
+/* пожелтевшие края */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
-    h2 {
-      margin-top: 60px;
-      font-weight: normal;
-    }
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0) 60%,
+    rgba(210,180,120,0.25) 100%
+  );
+}
 
-    p {
-      margin-bottom: 20px;
-    }
+/* лёгкая текстура бумаги */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
-    .nav {
-      margin-bottom: 60px;
-      font-size: 14px;
-    }
-
-    .nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #555;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      width: 100%;
-      margin: 30px 0;
-      border-radius: 4px;
-    }
-
-    .caption {
-      font-size: 13px;
-      color: #777;
-      margin-top: -20px;
-      margin-bottom: 30px;
-    }
-
-    .quote {
-      font-style: italic;
-      margin: 40px 0;
-      padding-left: 20px;
-      border-left: 2px solid #ccc;
-      color: #555;
-    }
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.25;
+}
   </style>
 </head>
 
