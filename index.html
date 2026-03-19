@@ -2,96 +2,53 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Жизнь Ивана Ефимовича Братышенко</title>
-
-  <!-- Рукописный + мягкий текст -->
-  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=EB+Garamond&display=swap" rel="stylesheet">
+  <title>История моего прадеда</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+   body {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  background-color: #eae3d2;
+}
 
-    body {
-      margin: 0;
-      background: #e8decc;
-      font-family: 'EB Garamond', serif;
-      color: #2a2620;
-    }
+/* сама "страница" */
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 60px 50px;
+  background: #fdfaf3;
+  position: relative;
+  
+  /* мягкая тень */
+  box-shadow: 
+    0 0 40px rgba(0,0,0,0.15),
+    inset 0 0 80px rgba(180, 150, 90, 0.15);
+}
 
-    .container {
-      max-width: 720px;
-      margin: 80px auto;
-      padding: 70px 60px;
-      background: #fdfaf4;
-      border-radius: 3px;
+/* пожелтевшие края */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
-      /* мягкая тень листа */
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0) 60%,
+    rgba(210,180,120,0.25) 100%
+  );
+}
 
-    /* навигация — аккуратная, не отвлекает */
-    .nav {
-      margin-bottom: 50px;
-      font-size: 14px;
-      opacity: 0.6;
-    }
+/* лёгкая текстура бумаги */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
-    .nav a {
-      margin-right: 18px;
-      text-decoration: none;
-      color: #5f584c;
-    }
-
-    /* заголовок как будто написан рукой */
-    h1 {
-      font-family: 'Marck Script', cursive;
-      font-size: 42px;
-      font-weight: normal;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font-family: 'Marck Script', cursive;
-      font-size: 28px;
-      margin-top: 60px;
-      margin-bottom: 10px;
-    }
-
-    /* основной текст — мягкий и читаемый */
-    p {
-      font-size: 19px;
-      line-height: 1.9;
-      margin-bottom: 22px;
-    }
-
-    /* эффект записи (чуть неровно) */
-    .handwritten {
-      transform: rotate(-0.3deg);
-    }
-
-    .quote {
-      font-family: 'Marck Script', cursive;
-      font-size: 24px;
-      margin: 40px 0;
-      color: #4f463b;
-    }
-
-    img {
-      width: 100%;
-      margin: 35px 0;
-      border-radius: 2px;
-      filter: sepia(25%) contrast(95%);
-    }
-
-    .caption {
-      font-size: 13px;
-      color: #7a6f5c;
-      margin-top: -20px;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.25;
+}
   </style>
 </head>
 
@@ -105,23 +62,23 @@
       <a href="#">Глава 2</a>
     </div>
 
-    <h1 class="handwritten">История семьи Братышенко</h1>
+    <h1>Жизнь Ивана Ефимовича Братышенко</h1>
 
-    <p class="handwritten">
-      Заметки, записи, рассказы и воспоминания
+    <p>
+      История семьи Братышенко в письмах и воспоминаниях
     </p>
 
-    <div class="quote handwritten">
-      «Иногда память — это единственное место, где человек остаётся живым»
+    <div class="quote">
+      «Иногда память — это единственное место, где человек остаётся живым».
     </div>
 
-    <h2 class="handwritten">Глава 1</h2>
+    <h2>Глава 1</h2>
 
     <p>
       Он родился в маленькой деревне Щелино, Новгородской губернии.
     </p>
 
-    <img src="grandpa.jpg" alt="Братышенко И.Е.">
+    <img src="grandpa.jpg" alt="Прадед">
     <div class="caption">Портрет Ивана Ефимовича</div>
 
     <p>
