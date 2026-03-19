@@ -4,51 +4,124 @@
   <meta charset="UTF-8">
   <title>Жизнь Ивана Ефимовича Братышенко</title>
 
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
-   body {
-  margin: 0;
-  font-family: 'EB Garamond', serif;
-  background-color: #eae3d2;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* сама "страница" */
-.container {
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 60px 50px;
-  background: #fdfaf3;
-  position: relative;
-  
-  /* мягкая тень */
-  box-shadow: 
-    0 0 40px rgba(0,0,0,0.15),
-    inset 0 0 80px rgba(180, 150, 90, 0.15);
-}
+    body {
+      margin: 0;
+      background-color: #eae3d2;
+      font-family: 'EB Garamond', serif;
+      color: #3a352b;
+    }
 
-/* пожелтевшие края */
-.container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+    .container {
+      max-width: 720px;
+      margin: 100px auto;
+      padding: 70px 60px;
+      background: #fdfaf3;
+      position: relative;
+      border-radius: 6px;
 
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255,255,255,0) 60%,
-    rgba(210,180,120,0.25) 100%
-  );
-}
+      box-shadow: 
+        0 10px 40px rgba(0,0,0,0.15),
+        inset 0 0 80px rgba(180, 150, 90, 0.12);
 
-/* лёгкая текстура бумаги */
-.container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+      /* ВАЖНО: фикс слоёв */
+      overflow: hidden;
+    }
 
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  opacity: 0.25;
-}
+    /* пожелтевшие края */
+    .container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0) 60%,
+        rgba(210,180,120,0.25) 100%
+      );
+    }
+
+    /* текстура бумаги */
+    .container::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      opacity: 0.2;
+    }
+
+    /* ВАЖНО: чтобы текст был поверх эффектов */
+    .container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav {
+      margin-bottom: 60px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #6b6458;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .quote {
+      font-style: italic;
+      margin: 40px 0;
+      padding-left: 20px;
+      border-left: 2px solid #c8b89a;
+      color: #5a5346;
+    }
+
+    img {
+      width: 100%;
+      margin: 30px 0;
+      border-radius: 3px;
+      filter: sepia(20%) contrast(95%);
+    }
+
+    .caption {
+      font-size: 13px;
+      color: #7a7366;
+      margin-top: -20px;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 
@@ -75,7 +148,7 @@
     <h2>Глава 1</h2>
 
     <p>
-      Он родился в маленькой деревне Щелино, Новгородской губернии. 
+      Он родился в маленькой деревне Щелино, Новгородской губернии.
     </p>
 
     <img src="grandpa.jpg" alt="Братышенко И.Е.">
